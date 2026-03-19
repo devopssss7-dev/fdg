@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Fetch Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/devopssss7-dev/fdg.git'
+            }
+        }
+
+        stage('Check File') {
+            steps {
+                sh 'ls -l'
+            }
+        }
+
+        stage('Show File') {
+            steps {
+                sh 'cat index.html'
+            }
+        }
+    }
+}
